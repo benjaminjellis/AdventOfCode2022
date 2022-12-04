@@ -1,12 +1,8 @@
 ﻿let getInput path = System.IO.File.ReadAllLines(path)
 
-let splitInputIntoRucksacks input =
-    let inputLen = String.length input
-    let middle = inputLen / 2
-    let firstRucksack = input[.. middle - 1]
-    let secondRucksack = input[middle..]
-    (firstRucksack, secondRucksack)
-
+let splitIntoCompartments input =
+    let middle = input |> String.length |> (fun x -> x / 2)
+    (input[.. middle - 1], input[middle..])
 
 let lookupScore s =
     // convert the Set of chars into an Array of chars as then take the 0th element
@@ -20,10 +16,10 @@ let lookupScore s =
 
 let part1 =
     getInput "../../../ProblemInputs/day3.txt"
-    |> Seq.map splitInputIntoRucksacks
-    |> Seq.map (fun (first, second) ->
-        let fristAsSet = first |> Set.ofSeq
-        let secondAsSet = second |> Set.ofSeq
+    |> Seq.map splitIntoCompartments
+    |> Seq.map (fun (firstCompartment, secondCompartment) ->
+        let fristAsSet = firstCompartment |> Set.ofSeq
+        let secondAsSet = secondCompartment |> Set.ofSeq
         Set.intersect fristAsSet secondAsSet |> lookupScore)
     |> Seq.sum
 
