@@ -1,0 +1,24 @@
+{
+    "files.autoSave": "afterDelay",
+    "[fsharp]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "Ionide.Ionide-fsharp"
+      },
+    "editor.mouseWheelZoom": true,
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "[Monokai GrayJack]": {
+            "rules": {
+                "interface":{
+                    "foreground": "#ff8c00",
+                    "italic": false
+                } 
+            }
+        }
+    },
+    "workbench.colorCustomizations": {
+        "[Monokai GrayJack]": {
+            "statusBar.background": "#B2E64C"
+        }
+    }
+}
