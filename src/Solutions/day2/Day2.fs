@@ -1,10 +1,7 @@
 ﻿let getInput path = System.IO.File.ReadAllLines(path)
 
-// rock
 let rock = 1
-// paper
 let paper = 2
-// scissors
 let scissors = 3
 let win = 6
 let loss = 0
@@ -55,8 +52,6 @@ let calcResultPart2 element =
     | _ -> failwith "Unexpected chars, not a handled combination"
 
 let part1 =
-    let someVar = "hello"
-
     getInput "../../../ProblemInputs/day2.txt"
     |> Seq.map (fun x -> calcResult x)
     |> Seq.sum

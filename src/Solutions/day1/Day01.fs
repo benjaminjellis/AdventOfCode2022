@@ -10,18 +10,18 @@ let parseInput input =
     |> Seq.map (fun x -> x |> Seq.map int)
 
 let part1 =
-    let input = getInput "../../../ProblemInputs/day1.txt"
-    let parsedInput = parseInput input
-    let calories = parsedInput |> Seq.map Seq.sum
-    let maxCalories = calories |> Seq.max
-    maxCalories
+    getInput "../../../ProblemInputs/day1.txt"
+    |> parseInput
+    |> Seq.map Seq.sum
+    |> Seq.max
 
 let part2 =
-    let input = getInput "../../../ProblemInputs/day1.txt"
-    let parsedInput = parseInput input
-    let calories = parsedInput |> Seq.map Seq.sum
-    let top3CalroiesSum = calories |> Seq.sortDescending |> Seq.take 3 |> Seq.sum
-    top3CalroiesSum
+    getInput "../../../ProblemInputs/day1.txt"
+    |> parseInput
+    |> Seq.map Seq.sum
+    |> Seq.sortDescending
+    |> Seq.take 3
+    |> Seq.sum
 
 [<EntryPoint>]
 let main _ =
